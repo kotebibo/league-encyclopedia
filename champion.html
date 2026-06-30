@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoL Explorer — Champion</title>
+    <meta name="description" content="Detailed champion stats, abilities, lore, and skins." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-theme="dark">
+    <header class="nav">
+      <a class="nav__brand" href="index.html">⚔️ LoL Explorer</a>
+      <button class="nav__hamburger" data-nav-toggle aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav__menu" data-nav-menu aria-label="Primary">
+        <a href="index.html" class="nav__link nav__link--active">Champions</a>
+        <a href="items.html" class="nav__link">Items</a>
+        <a href="builds.html" class="nav__link">My Builds</a>
+        <button class="nav__theme" data-theme-toggle aria-label="Switch theme" title="Toggle dark / light theme">🌓</button>
+      </nav>
+    </header>
+
+    <main class="page">
+      <p class="back-link"><a href="index.html">← Back to all champions</a></p>
+
+      <p class="state state--loading" id="loadingState">Loading champion…</p>
+      <p class="state state--error" id="errorState" hidden></p>
+
+      <article class="champ-detail" id="champDetail" hidden>
+
+        <section class="champ-detail__banner" id="banner">
+          <div class="champ-detail__banner-overlay">
+            <h1 id="champName"></h1>
+            <p class="champ-detail__title" id="champTitle"></p>
+            <div class="tag-row" id="champTags"></div>
+            <div class="champ-detail__actions">
+              <button class="btn" id="favBtn">☆ Add to favorites</button>
+              <button class="btn btn--ghost" id="buildBtn">＋ Add to a build</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="champ-detail__body">
+
+          <section class="panel">
+            <h2>Base Stats</h2>
+            <ul class="stats-grid" id="statsGrid"></ul>
+          </section>
+
+          <section class="panel">
+            <h2>Abilities</h2>
+            <div class="abilities" id="abilitiesRow"></div>
+            <div class="ability-detail" id="abilityDetail">
+              <p class="muted">Select an ability to read its description.</p>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Lore</h2>
+            <p class="lore" id="loreText"></p>
+          </section>
+
+          <section class="panel">
+            <h2>Skins</h2>
+            <div class="skins" id="skinsGallery"></div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p>BTU Final Project · Data © Riot Games via Data Dragon · Not endorsed by Riot Games.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/champion.js"></script>
+  </body>
+</html>
