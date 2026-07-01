@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoL Explorer — Champions</title>
+    <meta
+      name="description"
+      content="Browse every League of Legends champion. Search, filter by role, sort, and favorite."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-theme="dark">
+
+    <header class="nav">
+      <a class="nav__brand" href="index.html">⚔️ LoL Explorer</a>
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+      >
+        ☰
+      </button>
+      <nav class="nav__menu" data-nav-menu aria-label="Primary">
+        <a href="index.html" class="nav__link nav__link--active">Champions</a>
+        <a href="items.html" class="nav__link">Items</a>
+        <a href="builds.html" class="nav__link">My Builds</a>
+        <button
+          class="nav__theme"
+          data-theme-toggle
+          aria-label="Switch theme"
+          title="Toggle dark / light theme"
+        >
+          🌓
+        </button>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <h1>Champions</h1>
+        <p class="hero__sub">
+          Data from Riot's Data Dragon — patch
+          <span id="patchLabel">…</span>
+        </p>
+      </section>
+
+      <section class="controls" aria-label="Champion filters">
+        <input
+          type="search"
+          id="searchInput"
+          class="controls__search"
+          placeholder="Search champions…"
+          aria-label="Search champions by name"
+        />
+        <select id="roleFilter" class="controls__select" aria-label="Filter by role">
+          <option value="All">All roles</option>
+          <option value="Fighter">Fighter</option>
+          <option value="Mage">Mage</option>
+          <option value="Assassin">Assassin</option>
+          <option value="Marksman">Marksman</option>
+          <option value="Tank">Tank</option>
+          <option value="Support">Support</option>
+        </select>
+        <select id="sortSelect" class="controls__select" aria-label="Sort champions">
+          <option value="name">Name A–Z</option>
+          <option value="attack">Attack (high→low)</option>
+          <option value="difficulty">Difficulty (high→low)</option>
+        </select>
+        <label class="controls__check">
+          <input type="checkbox" id="favOnly" />
+          Favorites only
+        </label>
+      </section>
+
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+
+      <p class="state state--loading" id="loadingState">Loading champions…</p>
+      <p class="state state--error" id="errorState" hidden></p>
+
+      <section
+        class="champ-grid"
+        id="champGrid"
+        aria-label="Champion list"
+      ></section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        BTU Final Project · Data © Riot Games via Data Dragon · Not endorsed by
+        Riot Games.
+      </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
